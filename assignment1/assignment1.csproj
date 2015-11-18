@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BeverageDBContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="BeverageItem.cs" />
     <Compile Include="CSVProcessor.cs" />
     <Compile Include="IWineCollection.cs" />
     <Compile Include="Program.cs" />
