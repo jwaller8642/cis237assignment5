@@ -43,7 +43,7 @@ namespace assignment1
             //This is the 'primer' run of displaying and getting.
             int choice = userInterface.DisplayMenuAndGetResponse();
 
-            while (choice != 5)
+            while (choice != 6)
             {
                 switch (choice)
                 {
@@ -103,6 +103,12 @@ namespace assignment1
                         {
                             userInterface.DisplayItemAlreadyExistsError();
                         }
+                        break;
+
+                    case 5:
+                        BeverageCollection dbBev = new BeverageCollection();
+
+                        dbBev.printBeverage();
                         break;
                 }
 
