@@ -8,5 +8,81 @@ namespace assignment1
 {
     class BeverageItem
     {
+        string userInput = string.Empty;
+        
+        UserInterface userInterface = new UserInterface();
+        BeverageJWallerEntities itemmBeverage = new BeverageJWallerEntities();
+
+
+        public void UpdateBeverge()
+        {
+            Console.Write("Enter id of beverage you want to update");
+            userInput = Console.ReadLine();
+            Beverage updateDrink = itemmBeverage.Beverages.Find(userInput);
+            Console.WriteLine(updateDrink.id + " " + updateDrink.name + " " + " " + updateDrink.pack + " " + updateDrink.price);
+
+            
+            Console.WriteLine("****************");
+            Console.WriteLine("1. Update ID ");
+            Console.WriteLine("2. Update Name ");
+            Console.WriteLine("3. Update pack ");
+            Console.WriteLine("4. Update price ");
+            Console.WriteLine("5. Update all ");
+            Console.WriteLine("m. Main Menu");
+            Console.Write("Choose an option ");
+            userInput = Console.ReadLine();
+
+            
+
+            if (userInput == "1")
+            {
+                userInput = null;
+                Console.Write("Enter New id ");
+                userInput = Console.ReadLine();
+                updateDrink.id = userInput;
+                itemmBeverage.SaveChanges();
+
+            }
+            else if (userInput == "2")
+            {
+                userInput = null;
+                Console.Write("Enter New name ");
+                userInput = Console.ReadLine();
+                updateDrink.name = userInput;
+                itemmBeverage.SaveChanges();
+            }
+            else if (userInput == "3")
+            {
+                userInput = null;
+                Console.Write("Enter New pack ");
+                userInput = Console.ReadLine();
+                updateDrink.pack = userInput;
+                itemmBeverage.SaveChanges();
+            }
+            else if (userInput == "4")
+            {
+                userInput = null;
+                Console.Write("Enter New price ");
+                userInput = Console.ReadLine();
+                updateDrink.price = Int32.Parse(userInput);
+                itemmBeverage.SaveChanges();
+            }
+            else if (userInput == "5")
+            {
+                
+            }
+            else if (userInput == "m")
+            {
+                int choice = userInterface.DisplayMenuAndGetResponse();
+            }
+            else
+            {
+                Console.WriteLine("Not A Valid Choice!!");
+            }
+        }
     }
+
 }
+
+
+

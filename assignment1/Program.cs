@@ -25,6 +25,8 @@ namespace assignment1
             const int wineItemCollectionSize = 4000;
             //
             BeverageCollection dbBev = new BeverageCollection();
+            //
+            BeverageItem beverageItem = new BeverageItem();
             //Set a constant for the path to the CSV File
             const string pathToCSVFile = "../../../datafiles/winelist.csv";
 
@@ -44,7 +46,7 @@ namespace assignment1
             //This is the 'primer' run of displaying and getting.
             int choice = userInterface.DisplayMenuAndGetResponse();
 
-            while (choice != 8)
+            while (choice != 9)
             {
                 switch (choice)
                 {
@@ -118,6 +120,9 @@ namespace assignment1
                     case 7:
                         //
                         dbBev.SearchBeverage();
+                        break;
+                    case 8:
+                        beverageItem.UpdateBeverge();
                         break;
                 }
 

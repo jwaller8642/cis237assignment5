@@ -11,7 +11,7 @@ namespace assignment1
 {
     class UserInterface
     {
-        const int maxMenuChoice = 8;
+        const int maxMenuChoice = 9;
         //---------------------------------------------------
         //Public Methods
         //---------------------------------------------------
