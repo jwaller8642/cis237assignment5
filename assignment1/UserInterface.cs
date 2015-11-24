@@ -11,7 +11,7 @@ namespace assignment1
 {
     class UserInterface
     {
-        const int maxMenuChoice = 9;
+        const int maxMenuChoice = 11;
         //---------------------------------------------------
         //Public Methods
         //---------------------------------------------------
@@ -148,14 +148,16 @@ namespace assignment1
             Console.WriteLine();
             Console.WriteLine("What would you like to do?");
             Console.WriteLine();
-            Console.WriteLine("1. Load Wine List From CSV");
-            Console.WriteLine("2. Print The Entire List Of Items");
-            Console.WriteLine("3. Search For An Item");
-            Console.WriteLine("4. Add New Item To The List");
-            Console.WriteLine("5. Read from DataBase");
-            Console.WriteLine("6. Add to the Database");
-            Console.WriteLine("7. Search datatbase");
-            Console.WriteLine("8. Exit Program");
+            Console.WriteLine("1. Read from DataBase"); // New option
+            Console.WriteLine("2. Add to the Database");// New option
+            Console.WriteLine("3. Search datatbase");// New option
+            Console.WriteLine("4. Update existing item");// New option
+            Console.WriteLine("5. Delete Existing item");// New option
+            Console.WriteLine("N/A. Load Wine List From CSV");
+            Console.WriteLine("N/a. Print The Entire List Of Items");
+            Console.WriteLine("N/A. Search For An Item");
+            Console.WriteLine("N/A. Add New Item To The List");                   
+            Console.WriteLine("6. Exit Program");
         }
 
         //Display the Prompt

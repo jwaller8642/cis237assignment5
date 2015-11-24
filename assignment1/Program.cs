@@ -23,9 +23,9 @@ namespace assignment1
         {
             //Set a constant for the size of the collection
             const int wineItemCollectionSize = 4000;
-            //
+            // path to BevCollection class
             BeverageCollection dbBev = new BeverageCollection();
-            //
+            // path to bev item class
             BeverageItem beverageItem = new BeverageItem();
             //Set a constant for the path to the CSV File
             const string pathToCSVFile = "../../../datafiles/winelist.csv";
@@ -46,11 +46,11 @@ namespace assignment1
             //This is the 'primer' run of displaying and getting.
             int choice = userInterface.DisplayMenuAndGetResponse();
 
-            while (choice != 9)
+            while (choice != 6)
             {
                 switch (choice)
                 {
-                    case 1:
+                    case 111:
                         //Load the CSV File
                         bool success = csvProcessor.ImportCSV(wineItemCollection, pathToCSVFile);
                         if (success)
@@ -65,7 +65,7 @@ namespace assignment1
                         }
                         break;
 
-                    case 2:
+                    case 112:
                         //Print Entire List Of Items
                         string[] allItems = wineItemCollection.GetPrintStringsForAllItems();
                         if (allItems.Length > 0)
@@ -80,7 +80,7 @@ namespace assignment1
                         }
                         break;
 
-                    case 3:
+                    case 113:
                         //Search For An Item
                         string searchQuery = userInterface.GetSearchQuery();
                         string itemInformation = wineItemCollection.FindById(searchQuery);
@@ -94,7 +94,7 @@ namespace assignment1
                         }
                         break;
 
-                    case 4:
+                    case 114:
                         //Add A New Item To The List
                         string[] newItemInformation = userInterface.GetNewItemInformation();
                         if (wineItemCollection.FindById(newItemInformation[0]) == null)
@@ -108,22 +108,28 @@ namespace assignment1
                         }
                         break;
 
-                    case 5:
-                        //
+                    case 1:
+                        // calls print method
                         dbBev.printBeverage();
                         break;
 
-                    case 6:
-                        //
+                    case 2:
+                        // calls add method
                         dbBev.AddBeverage();
                         break;
-                    case 7:
-                        //
+                    case 3:
+                        // calls search method
                         dbBev.SearchBeverage();
                         break;
-                    case 8:
+                    case 4:
+                        // calls update method
                         beverageItem.UpdateBeverge();
                         break;
+                    case 5:
+                        //calls delte method
+                        beverageItem.DeleteBeverage();
+                        break;
+
                 }
 
                 //Get the new choice of what to do from the user
